@@ -64,7 +64,7 @@ namespace Expenses_Tracker
             sda.Fill(dt);
             sda1.Fill(dt1);
             double Avg = Convert.ToDouble(dt.Rows[0][0].ToString()) / Convert.ToDouble(dt1.Rows[0][0].ToString());
-            AvgLbl.Text = "R$" + Avg;
+            AvgLbl.Text = "R$" + ((int)Avg);
             CountLbl.Text = dt1.Rows[0][0].ToString() + " Expenses";
             Con.Close();
         }

@@ -98,6 +98,7 @@
             this.ExpNameTb.Name = "ExpNameTb";
             this.ExpNameTb.Size = new System.Drawing.Size(319, 35);
             this.ExpNameTb.TabIndex = 1;
+            this.ExpNameTb.TextChanged += new System.EventHandler(this.ExpNameTb_TextChanged);
             // 
             // label3
             // 

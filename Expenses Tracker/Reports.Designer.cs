@@ -30,7 +30,9 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.CountLbl = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.MaxLbl = new System.Windows.Forms.Label();
@@ -58,9 +60,9 @@
             this.Catcb = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
             this.TotByCatLbl = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -73,8 +75,6 @@
             this.panel11.SuspendLayout();
             this.panel12.SuspendLayout();
             this.panel13.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -100,6 +100,16 @@
             this.CountLbl.TabIndex = 21;
             this.CountLbl.Text = "Count";
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Expenses_Tracker.Properties.Resources.handmoney;
+            this.pictureBox2.Location = new System.Drawing.Point(11, 11);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(46, 50);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 18;
+            this.pictureBox2.TabStop = false;
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -109,6 +119,17 @@
             this.label6.Size = new System.Drawing.Size(112, 37);
             this.label6.TabIndex = 17;
             this.label6.Text = "Report";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Expenses_Tracker.Properties.Resources.close;
+            this.pictureBox1.Location = new System.Drawing.Point(885, 11);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(46, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // panel3
             // 
@@ -135,7 +156,7 @@
             // 
             this.MaxLbl.AutoSize = true;
             this.MaxLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MaxLbl.Location = new System.Drawing.Point(114, 67);
+            this.MaxLbl.Location = new System.Drawing.Point(81, 67);
             this.MaxLbl.Name = "MaxLbl";
             this.MaxLbl.Size = new System.Drawing.Size(85, 40);
             this.MaxLbl.TabIndex = 20;
@@ -168,7 +189,7 @@
             // 
             this.MinLbl.AutoSize = true;
             this.MinLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MinLbl.Location = new System.Drawing.Point(128, 67);
+            this.MinLbl.Location = new System.Drawing.Point(104, 67);
             this.MinLbl.Name = "MinLbl";
             this.MinLbl.Size = new System.Drawing.Size(75, 40);
             this.MinLbl.TabIndex = 20;
@@ -210,7 +231,7 @@
             // 
             this.AvgLbl.AutoSize = true;
             this.AvgLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AvgLbl.Location = new System.Drawing.Point(114, 67);
+            this.AvgLbl.Location = new System.Drawing.Point(69, 69);
             this.AvgLbl.Name = "AvgLbl";
             this.AvgLbl.Size = new System.Drawing.Size(79, 40);
             this.AvgLbl.TabIndex = 20;
@@ -253,7 +274,7 @@
             // 
             this.HighCatLbl.AutoSize = true;
             this.HighCatLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HighCatLbl.Location = new System.Drawing.Point(89, 69);
+            this.HighCatLbl.Location = new System.Drawing.Point(54, 69);
             this.HighCatLbl.Name = "HighCatLbl";
             this.HighCatLbl.Size = new System.Drawing.Size(139, 40);
             this.HighCatLbl.TabIndex = 20;
@@ -295,7 +316,7 @@
             // 
             this.TotLbl.AutoSize = true;
             this.TotLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TotLbl.Location = new System.Drawing.Point(114, 67);
+            this.TotLbl.Location = new System.Drawing.Point(81, 67);
             this.TotLbl.Name = "TotLbl";
             this.TotLbl.Size = new System.Drawing.Size(97, 40);
             this.TotLbl.TabIndex = 20;
@@ -403,27 +424,6 @@
             this.TotByCatLbl.Text = "Amount";
             this.TotByCatLbl.Visible = false;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::Expenses_Tracker.Properties.Resources.handmoney;
-            this.pictureBox2.Location = new System.Drawing.Point(11, 11);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(46, 50);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 18;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Expenses_Tracker.Properties.Resources.close;
-            this.pictureBox1.Location = new System.Drawing.Point(885, 11);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(46, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
             // Reports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -446,6 +446,8 @@
             this.Text = "Reports";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -470,8 +472,6 @@
             this.panel12.PerformLayout();
             this.panel13.ResumeLayout(false);
             this.panel13.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

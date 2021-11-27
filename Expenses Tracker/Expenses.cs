@@ -51,5 +51,10 @@ namespace Expenses_Tracker
                 Clear();
             }
         }
+
+        private void ExpNameTb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
